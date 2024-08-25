@@ -1,0 +1,49 @@
+[23-Aug-2024 22:14:53 Europe/Berlin] PHP Warning:  Undefined array key "fun" in C:\xampp\htdocs\eBanking\backend\controller\Usuario.php on line 5
+[23-Aug-2024 22:18:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function conection() in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:28
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281371', 'mifklaf@gmial.c...', '2532v', 'SEbas', 'Suase')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#2 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 28
+[23-Aug-2024 22:20:50 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO Usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281371', 'mifklaf@gmial.c...', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[23-Aug-2024 22:25:37 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281371', 'mifklaf@gmial.c...', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[24-Aug-2024 17:53:06 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281371', 'mifklaf@gmial.c...', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[24-Aug-2024 17:53:12 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281', 'mifklaf@gmial.c...', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[24-Aug-2024 23:49:24 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281', 'mifkla', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[25-Aug-2024 00:03:02 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '56281' for key 'PRIMARY' in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:31
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(31): mysqli->query('INSERT INTO usu...')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(20): Usuario->insertar('56281', 'mifkla', '2532v', 'SEbas', 'Suase')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
