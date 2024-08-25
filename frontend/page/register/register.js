@@ -39,12 +39,17 @@ function validarDatos(){
 
     let valido = true;
     if (ciElement.value.length !== 8){
-        alert("Cédula incorrecta")
+        
         valido = false;
     }
-    
+
+    if (passElement.value.length > 7){
+
+        valido = false;
+    }
+
     if (passElement.value !== passConfirmElement.value){
-        alert("Las contraseñas con coinciden")
+        
         valido = false;
     }
     

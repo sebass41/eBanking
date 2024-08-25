@@ -41,18 +41,33 @@ class Usuario{
     }
 
     function login($ci, $pass){
-        $connection = conection();
-        $sql = "SELECT * FROM usuario WHERE Cedula = $ci AND Password = $pass";
-        $respuesta = $connection->query($sql);
-        $user = $respuesta->fetch_all(MYSQLI_ASSOC);
-        
-        if ($respuesta) {
-            $msj = "Se pudo iniciar Sesión";
-            return new Respuesta(true, $msj, $user);
-        }else {
-            $msj = "No se pudo iniciar Sesión";
+        try{
+            $connection = conection();
+            $sql = "SELECT * FROM usuario WHERE Cedula = $ci";
+            $respuesta = $connection->query($sql);
+            $usr = $respuesta->fetch_all(MYSQLI_ASSOC);
+
+            if (count($usr) > 0){
+                $pas = $usr[0]['Password'];
+                if (password_verify($pass, $pas)){
+                    $msj = "Inicio de sesión exitosa";
+                    return new Respuesta(true, $msj, $usr);
+                }else{
+                    $msj = "Contraseña incorrecta";
+                    return new Respuesta(false, $msj, []);
+                }
+
+                
+            }else{
+                $msj = "Fallo en el inicio de sesión";
+                return new Respuesta(false, $msj, []);
+            }
+
+        }catch (Exception $e){
+            $msj = "Error: $e";
             return new Respuesta(false, $msj, []);
         }
+           
     }
 
 }

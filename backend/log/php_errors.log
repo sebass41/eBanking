@@ -12,3 +12,19 @@ Stack trace:
 #2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
 #3 {main}
   thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 31
+[25-Aug-2024 22:30:37 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\controller\Usuario.php on line 33
+[25-Aug-2024 22:30:49 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\controller\Usuario.php on line 33
+[25-Aug-2024 22:30:59 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\controller\Usuario.php on line 33
+[25-Aug-2024 22:31:52 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Usuario::login(), 1 passed in C:\xampp\htdocs\eBanking\backend\controller\Usuario.php on line 32 and exactly 2 expected in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:43
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(32): Usuario->login('299976')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(12): login()
+#2 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 43
+[25-Aug-2024 22:59:16 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 22:59:27 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 22:59:33 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 23:00:21 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 23:03:45 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 23:05:48 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[25-Aug-2024 23:08:01 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51

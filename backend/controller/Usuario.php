@@ -8,6 +8,9 @@ switch($funcion){
     case 'i':
         insertar();
         break;
+    case 'l':
+        login();
+        break;
 }
 
 function insertar(){
@@ -23,4 +26,11 @@ function insertar(){
     echo json_encode($result);
 }
 
+function login(){
+    $ci = $_POST['ci'];
+    $pass = $_POST['pass'];
+    $result = (new Usuario())->login($ci, $pass);
+
+    echo json_encode($result);
+}
 ?>
