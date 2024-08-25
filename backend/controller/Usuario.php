@@ -5,7 +5,7 @@ require_once "../model/UsuarioDAO.php";
 $funcion = $_GET['fun'];
 
 switch($funcion){
-    case 'insertar':
+    case 'i':
         insertar();
         break;
 }
@@ -13,12 +13,14 @@ switch($funcion){
 function insertar(){
     $ci = $_POST['ci'];
     $mail = $_POST['mail'];
-    $pass = $_POST['pass'];
+    $pas = $_POST['pass'];
     $name = $_POST['name'];
     $sName = $_POST['sName'];
+    
+    $pass = password_hash($pas, PASSWORD_DEFAULT);
 
     $result = (new Usuario())->insertar($ci, $mail, $pass, $name, $sName);
-    return json_encode($result);
+    echo json_encode($result);
 }
 
 ?>

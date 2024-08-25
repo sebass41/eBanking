@@ -26,15 +26,16 @@ class Usuario{
     }
 
     function insertar($ci, $mail, $pass, $name, $sname){
-        $connection = conection();
-        $sql = "INSERT INTO usuario(`Cedula`, `Email`, `Password`, `Nombre`, `Apellido`) VALUES ($ci, '$mail', '$pass', '$name', '$sname')";
-        $respuesta = $connection->query($sql);
-
-        if($respuesta){
+        try{
+            $connection = conection();
+            $sql = "INSERT INTO usuario(`Cedula`, `Email`, `Password`, `Nombre`, `Apellido`) VALUES ($ci, '$mail', '$pass', '$name', '$sname')";
+            $respuesta = $connection->query($sql);
+            
             $msj = "Inserción exitosa";
             return new Respuesta(true, $msj, $respuesta);
-        }else{
-            $msj = "Fallo en la inserción";
+
+        }catch (Exception $e){
+            $msj = "Error: $e";
             return new Respuesta(false, $msj, []);
         }
     }
