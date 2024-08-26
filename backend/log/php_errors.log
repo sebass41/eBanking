@@ -28,3 +28,17 @@ Stack trace:
 [25-Aug-2024 23:03:45 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
 [25-Aug-2024 23:05:48 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
 [25-Aug-2024 23:08:01 Europe/Berlin] PHP Warning:  Undefined array key "Password" in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 51
+[26-Aug-2024 20:01:26 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:33
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(33): mysqli_stmt->bind_param('issss', '96385274', 'asdf', '$2y$10$odrShSIP...', 'asdf', 'asdf')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(25): Usuario->insertar('96385274', 'asdf', '$2y$10$odrShSIP...', 'asdf', 'asdf')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 33
+[26-Aug-2024 20:02:04 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php:33
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php(33): mysqli_stmt->bind_param('issss', '96385274', 'asdf', '$2y$10$Be20QxLT...', 'asdf', 'asdf')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(25): Usuario->insertar('96385274', 'asdf', '$2y$10$Be20QxLT...', 'asdf', 'asdf')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 33

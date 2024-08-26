@@ -34,6 +34,6 @@ async function ingresar(){
 
 
 function guardarSesion(usuario){
-    usr = usuario.
+    usr = usuario.ci;
     window.localStorage.setItem("usuario", JSON.stringify(usr));
 }

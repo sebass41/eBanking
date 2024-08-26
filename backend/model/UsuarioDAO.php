@@ -28,23 +28,28 @@ class Usuario{
     function insertar($ci, $mail, $pass, $name, $sname){
         try{
             $connection = conection();
-            $sql = "INSERT INTO usuario(`Cedula`, `Email`, `Password`, `Nombre`, `Apellido`) VALUES ($ci, '$mail', '$pass', '$name', '$sname')";
-            $respuesta = $connection->query($sql);
+            $sql = "INSERT INTO usuario(`Cedula`, `Email`, `Password`, `Nombre`, `Apellido`) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $connection->prepare($sql);
+            $stmt->bind_param("issss", $ci, $mail, $pass, $name, $sname);
+            $stmt->execute();
             
             $msj = "Inserción exitosa";
-            return new Respuesta(true, $msj, $respuesta);
+            return new Respuesta(true, $msj, $stmt);
 
         }catch (Exception $e){
-            $msj = "Error: $e";
-            return new Respuesta(false, $msj, []);
+            $msj = "Error: " . $e->getMessage();
+            return new Respuesta(false, $msj, $stmt);
         }
     }
 
     function login($ci, $pass){
         try{
             $connection = conection();
-            $sql = "SELECT * FROM usuario WHERE Cedula = $ci";
-            $respuesta = $connection->query($sql);
+            $sql = "SELECT * FROM usuario WHERE Cedula = ?";
+            $stmt = $connection->prepare($sql);
+            $stmt->bind_param("i", $ci);
+            $stmt->execute();
+            $respuesta = $stmt->get_result();
             $usr = $respuesta->fetch_all(MYSQLI_ASSOC);
 
             if (count($usr) > 0){
@@ -64,7 +69,7 @@ class Usuario{
             }
 
         }catch (Exception $e){
-            $msj = "Error: $e";
+            $msj = "Error: " . $e->getMessage();
             return new Respuesta(false, $msj, []);
         }
            
