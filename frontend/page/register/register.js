@@ -36,10 +36,12 @@ function validarDatos(){
     let ciElement = document.querySelector("#ci");
     let passElement = document.querySelector("#pass");
     let passConfirmElement = document.querySelector("#passConfirm");
+    let nameElement = document.querySelect("#name");
+
 
     let valido = true;
     if (ciElement.value.length !== 8){
-        
+        alert("asd")
         valido = false;
     }
 
@@ -52,6 +54,7 @@ function validarDatos(){
         
         valido = false;
     }
+
     
     return valido;
 }

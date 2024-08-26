@@ -6,7 +6,7 @@ body {
    
     height: 100vh;
     margin: 0;
-    background-color: #cf0029;
+    background-color: #f7f7f7;
     color: rgb(0, 0, 0);
 }
 
@@ -24,7 +24,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
@@ -34,11 +34,12 @@ form label {
 }
 
 form input {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
     border-radius: 5px;
-    margin-bottom: 10px;
-    width: 90%;
+    box-sizing: border-box;
 }
 
 form h2{
@@ -46,7 +47,7 @@ form h2{
 }
 
 form input[type="submit"] {
-    background-color: #9b0d0d;
+    background-color: #ff0000;
     color: rgb(255, 255, 255);
     padding: 10px;
     border: none;
@@ -77,11 +78,3 @@ input{
     border: solid 3px;
 }
 
-
-/*
-#F8F9E4
-#F60030
-#AC011C
-#2D0001
-#B17E4B
-*/
