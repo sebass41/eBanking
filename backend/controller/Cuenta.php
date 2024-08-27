@@ -11,9 +11,6 @@ switch ($funcion){
     case 'i':
         insertar();
         break;
-    case 'a':
-        actualizar();
-        break;
 }
 
 function mostrar(){
@@ -26,15 +23,13 @@ function mostrar(){
 }
 
 function insertar(){
+    session_start();
     $saldo = $_POST['saldo'];
+    $_SESSION['ci'] = 25883661;
     $ci = $_SESSION['ci'];
     
     $result = (new Cuenta())->insertar($ci, $saldo);
     echo json_encode($result);
-}
-
-function actualizar(){
-    $cuenta = 2;
 }
 
 ?>

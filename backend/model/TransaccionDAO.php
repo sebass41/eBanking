@@ -15,7 +15,7 @@ class Transaccion{
     }
 
 
-function insertar($monto, $concepto, $fecha, $cedula, $cuentaO, $cuentaD) {
+function hacerTransaccion($monto, $concepto, $fecha, $cedula, $cuentaO, $cuentaD) {
     try {
         $connection = conectionPDO();
         $connection->beginTransaction(); // Iniciar la transacción

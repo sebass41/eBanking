@@ -42,3 +42,5 @@ Stack trace:
 #2 C:\xampp\htdocs\eBanking\backend\controller\Usuario.php(9): insertar()
 #3 {main}
   thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 33
+[27-Aug-2024 19:30:15 Europe/Berlin] PHP Warning:  Undefined array key "saldo" in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 27
+[27-Aug-2024 19:39:15 Europe/Berlin] PHP Warning:  Undefined array key "saldo" in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 27

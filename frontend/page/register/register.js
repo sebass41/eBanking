@@ -39,10 +39,10 @@ function validarDatos(){
 
 
     let valido = true;
-    if (validate_ci(ciElement.value)){
+   /* if (validate_ci(ciElement.value)){
         alert("Ingrese una cedula valida")
         valido = false;
-    }
+    }*/
 
     if (passElement.value.length > 7){
 
@@ -58,6 +58,7 @@ function validarDatos(){
     return valido;
 }
 
+/*
 function validation_digit(ci){
     var a = 0;
     var i = 0;
@@ -83,3 +84,4 @@ function validation_digit(ci){
     return (dig == validation_digit(ci));
   }
   
+*/

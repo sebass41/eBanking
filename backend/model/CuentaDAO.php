@@ -51,7 +51,7 @@ class Cuenta{
             $connection = conection();
             $sql = "INSERT INTO `cuenta`(`Saldo`, `Cedula`) VALUES (?, ?)";
             $stmt = $connection->prepare($sql);
-            $stmt->bind_param("ii", $saldo, $CI);
+            $stmt->bind_param("ii", $saldo, $ci);
             $stmt->execute();
 
             $msj = "La cuenta se creó correctamente";
