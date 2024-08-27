@@ -27,13 +27,14 @@ function mostrar(){
 
 function insertar(){
     $saldo = $_POST['saldo'];
+    $ci = $_SESSION['ci'];
     
-
-    
+    $result = (new Cuenta())->insertar($ci, $saldo);
+    echo json_encode($result);
 }
 
 function actualizar(){
-
+    $cuenta = 2;
 }
 
 ?>

@@ -44,7 +44,22 @@ class Cuenta{
             $msj = "Error: " . $e->getMessage();
             return new Respuesta(false, $msj, []);
         }
-        
+    }
+
+    function insertar($ci, $saldo){
+        try{
+            $connection = conection();
+            $sql = "INSERT INTO `cuenta`(`Saldo`, `Cedula`) VALUES (?, ?)";
+            $stmt = $connection->prepare($sql);
+            $stmt->bind_param("ii", $saldo, $CI);
+            $stmt->execute();
+
+            $msj = "La cuenta se creó correctamente";
+            return new Respuesta(true, $msj, $stmt);
+        }catch (Exception $e){
+            $msj = "Error: " . $e->getMessage();
+            return new Respuesta(false, $msj, []);
+        }
     }
 
     
