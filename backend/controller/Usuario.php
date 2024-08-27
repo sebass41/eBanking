@@ -27,8 +27,11 @@ function insertar(){
 }
 
 function login(){
+    session_start();
+
     $ci = $_POST['ci'];
     $pass = $_POST['pass'];
+    $_SESSION['ci'] = $ci;
     $result = (new Usuario())->login($ci, $pass);
 
     echo json_encode($result);
