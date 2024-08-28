@@ -8,8 +8,8 @@ switch ($funcion){
     case 'm':
         mostrar();
         break;
-    case 'i':
-        insertar();
+    case 'c':
+        crear();
         break;
 }
 
@@ -22,7 +22,7 @@ function mostrar(){
     echo json_encode($result);
 }
 
-function insertar(){
+function crear(){
     session_start();
     $saldo = $_POST['saldo'];
     $_SESSION['ci'] = 25883661;

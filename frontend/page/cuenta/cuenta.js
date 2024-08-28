@@ -3,12 +3,12 @@ window.onload=()=>{
 }
 function crearCuenta(){
 
-    let formElement = document.querySelector("#form")
+    let formElement = document.querySelector("#formCuenta")
     
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
         let formData =  new FormData(formElement);
-        let url = "http://localhost/eBanking/backend/controller/Cuenta.php?fun=i"
+        let url = "http://localhost/eBanking/backend/controller/Cuenta.php?fun=c"
 
         let config = {
             method: 'POST',
