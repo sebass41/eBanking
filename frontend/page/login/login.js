@@ -1,14 +1,12 @@
-window.onload = ()=>{
-    let usuario = [];
-    usuario = JSON.parse(window.localStorage.getItem("usuario"));
-    if (usuario.lenght == 0){
+window.onload = () => {
+    let usuario = JSON.parse(window.localStorage.getItem("usuario")) || [];
+    if (usuario.length === 0) {
         ingresar();
     }
-}
+};
 
 async function ingresar(){
     let formElement = document.querySelector("#login");
-    
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
         let formData =  new FormData(formElement);
@@ -21,11 +19,11 @@ async function ingresar(){
         
         let respuesta = await fetch(url, config);
         let datos = await respuesta.json();
-        
-        if (datos.succes){
+        console.log(datos);
+        if (datos.sucess){
             console.log(datos);
             guardarSesion(datos);
-            window.location.href = "http://localhost/eBanking/frontend/principal/principal.html";
+            window.location.href = "http://localhost/eBanking/frontend/page/principal/principal.html";
         }else{
             console.log("No se pudo iniciar sesion");
         }
