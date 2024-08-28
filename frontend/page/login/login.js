@@ -1,10 +1,6 @@
 window.onload = () => {
-    let usuario = JSON.parse(window.localStorage.getItem("usuario")) || [];
-    if (usuario.length === 0) {
-        ingresar();
-    }
+    ingresar();
 };
-
 async function ingresar(){
     let formElement = document.querySelector("#login");
     formElement.onsubmit = async (e) =>{

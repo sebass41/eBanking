@@ -7,17 +7,28 @@
     <link rel="stylesheet" href="cuenta.css">
 </head>    
     <body>
-        <div class="form-container" id="form">
-            <h1>Crear cuenta:</h1>
-            <form action="#" method="post">
-                <label for="cedula">Número de Cédula:</label>
-                <input type="text" id="cedula" name="cedula" required>
+        <header>
+            <nav>
+                <div>
+                    <img src="../../assets/Sin título.png" alt="Logo" class="Logo">
+                </div>
+                <ul class="link">
+                    <li><a href="../cuenta/cuenta.html" class="a">Crear Cuenta</a></li>
+                    <li><a href="../transferencia/transferencia.html" class="a">Realizar transferencia</a></li>
+                    <li><a href="" class="a">Cerrar sesion</a></li>
+                </ul>
                 
-                <label for="saldo">Saldo:</label>
-                <input type="number" id="saldo" name="saldo" step="0.01" required>
-                
-                <button type="submit">Enviar</button>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Crear Cuenta Bancaria</h1>
+            <form id="form">
+                <label for="">Saldo de la cuenta</label>
+                <input type="text" name="saldo">
+
+                <input type="submit">
             </form>
-        </div>
+        </main>
     </body>
     </html>

@@ -15,7 +15,7 @@ switch ($funcion){
 
 function mostrar(){
     session_start();
-
+    $_SESSION['ci'] = 56281371;
     $ci = $_SESSION['ci'];
     $result = (new Cuenta())->mostrar($ci);
 

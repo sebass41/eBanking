@@ -1,46 +1,125 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100vh;
     margin: 0;
-    background-color: #f7f7f7;
-    color: rgb(0, 0, 0);
-}
-nav{
+    background-color: #f4f4f9;
+    color: #333;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 10vh;
+}
+
+nav {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #00BAF0;
-    background: linear-gradient(to left, #ff0000, #eec749);
-    color: #FFF;
-    height: 50px;
-    padding: 1em;
-    border-bottom: 2px solid black;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
 
-    
-    
+.Logo {
+    width: 120px;
 }
-.link{
-    list-style-type:none;
-}
-.a{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
 
-}
-main{
-    align-items: center;
-    justify-content: center;
+.link {
+    list-style-type: none;
     display: flex;
+    gap: 1.5em;
 }
 
-.Logo{
-    width: 90px;
-    margin-top: 20px;
-    
+.a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: color 0.3s;
 }
 
+.a:hover {
+    color: #ffeb3b;
+}
 
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.section {
+    box-sizing: border-box;
+    width: 48%;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    background-color: #00baf0;
+    color: #fff;
+}
+
+.trans {
+    background-color: #ffc107;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+thead th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1em;
+    text-align: left;
+}
+
+tbody td {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+form input, form select {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}

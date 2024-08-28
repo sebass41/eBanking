@@ -22,16 +22,35 @@
         </nav>
     </header>
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Numero de cuenta</th>
-                    <th>Céduala</th>
-                    <th>Saldo</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="section form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numero de cuenta</th>
+                        <th>Cédula</th>
+                        <th>Saldo</th>
+                    </tr>
+                </thead>
+                <tbody id="tBodyCuentas"></tbody>
+            </table>
+        </div>
+
+        <div class="section trans">
+            <form action="">
+                <label for="">Número de cuenta a depositar</label>
+                <input type="text" name="cuentaD">
+
+                <label for="">Cantidad</label>
+                <input type="text" name="cantidad" id="cantidad">
+
+                <label for="cuentaO">Cuenta de origen</label>
+                <select name="cuentaO" id="cuentaO">
+
+                </select>
+
+                <input type="submit" value="Finalizar">
+            </form>
+        </div>
     </main>
 </body>
 </html>

@@ -13,7 +13,7 @@ class Cuenta{
     function mostrar($ci){
        try{
             $connection = conection();
-            $sql = "SELECT * FROM cuenta WHERE ci = ?";
+            $sql = "SELECT * FROM cuenta WHERE Cedula = ?";
             $stmt = $connection->prepare($sql);
             $stmt->bind_param("i", $ci);
             $stmt->execute();
