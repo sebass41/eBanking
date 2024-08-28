@@ -30,10 +30,10 @@ class Cuenta{
 
     }
 
-    function actualizar($numCuenta, $saldo){
+    function depositar($numCuenta, $saldo){
         try{
             $connection = conection();
-            $sql = "UPDATE `cuenta` SET `Saldo`= ? WHERE Num_cuenta = ?";
+            $sql = "UPDATE `cuenta` SET `Saldo`= saldo + ? WHERE Num_cuenta = ?";
             $stmt = $connection->prepare($sql);
             $stmt->bind_param("ii", $saldo, $numCuenta);
             $stmt->execute();
