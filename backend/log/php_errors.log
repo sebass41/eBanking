@@ -44,3 +44,4 @@ Stack trace:
   thrown in C:\xampp\htdocs\eBanking\backend\model\UsuarioDAO.php on line 33
 [27-Aug-2024 19:30:15 Europe/Berlin] PHP Warning:  Undefined array key "saldo" in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 27
 [27-Aug-2024 19:39:15 Europe/Berlin] PHP Warning:  Undefined array key "saldo" in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 27
+[29-Aug-2024 01:07:46 Europe/Berlin] PHP Warning:  Undefined array key "monto" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 15

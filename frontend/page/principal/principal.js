@@ -1,7 +1,18 @@
 window.onload = async () => {
-    let cuentas = await obtenerCuentas();
-    mostrarCuentas(cuentas.data);
-    console.log(cuentas.data);
+    let respuesta = await obtenerCuentas();
+    let cuentas = respuesta.data;
+    mostrarCuentas(cuentas);
+    console.log(cuentas);
+    mostrarNumCuentas(cuentas);
+
+    transferir();
+}
+
+async function actualizarCuentas() {
+    let respuesta = await obtenerCuentas();
+    let cuentas = respuesta.data;
+    mostrarCuentas(cuentas);
+    mostrarNumCuentas(cuentas);
 }
 
 function mostrarCuentas(datos) {
@@ -14,7 +25,20 @@ function mostrarCuentas(datos) {
             <td>${dato.Saldo}</td>
             <td>${dato.Cedula}</td>
         `;
-        tBodyCuentas.appendChild(tr); // Añadir la fila a la tabla
+        tBodyCuentas.appendChild(tr); 
+    });
+}
+
+function mostrarNumCuentas(cuentas) {
+    let selectElement = document.querySelector("#cuentaO");
+
+    selectElement.innerHTML = "";
+    
+    cuentas.forEach(cuenta => {
+        let optionElement = document.createElement("option");
+        optionElement.value = cuenta.Num_cuenta;
+        optionElement.textContent = cuenta.Saldo;
+        selectElement.appendChild(optionElement);
     });
 }
 
@@ -28,7 +52,7 @@ async function obtenerCuentas() {
 }
 
 function transferir(){
-    let formElement = document.querySelector("#formTrans")
+    let formElement = document.querySelector("#formTrans");
     
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
@@ -45,9 +69,12 @@ function transferir(){
         console.log(datos);
         
         if (datos.sucess){
-            alert(datos.msj)
+            alert(datos.msj);
+            actualizarCuentas();
         }else {
             alert(datos.msj)
         }
     }
 }
+
+
