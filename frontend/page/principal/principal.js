@@ -26,3 +26,28 @@ async function obtenerCuentas() {
     let cuentas = datos;
     return cuentas;
 }
+
+function transferir(){
+    let formElement = document.querySelector("#formTrans")
+    
+    formElement.onsubmit = async (e) =>{
+        e.preventDefault()
+        let formData =  new FormData(formElement);
+        let url = "http://localhost/eBanking/backend/controller/Transaccion.php?fun=rt"
+
+        let config = {
+            method: 'POST',
+            body: formData
+        }
+
+        let respuesta = await fetch(url, config);
+        let datos = await respuesta.json();
+        console.log(datos);
+        
+        if (datos.sucess){
+            alert(datos.msj)
+        }else {
+            alert(datos.msj)
+        }
+    }
+}
