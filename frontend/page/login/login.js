@@ -12,7 +12,7 @@ async function ingresar(){
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
         let formData =  new FormData(formElement);
-        let url = "http://localhost/actImagen/gestorImagen/backend/controller/usuario.php?fun=login";
+        let url = "http://localhost/eBanking/backend/controller/Usuario.php?fun=l";
 
         let config = {
             method: 'POST',
@@ -25,7 +25,7 @@ async function ingresar(){
         if (datos.succes){
             console.log(datos);
             guardarSesion(datos);
-            window.location.href = "http://localhost/actImagen/gestorImagen/frontend/page/insertar/insertar.html";
+            window.location.href = "http://localhost/eBanking/frontend/principal/principal.html";
         }else{
             console.log("No se pudo iniciar sesion");
         }
