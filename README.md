@@ -2,7 +2,7 @@
 <p>Sistema de transacciones bancarias basico</p>
 <p>Le permite a los usuarios registrarse y dentro de la pagina crearse cuentas bancarias y realizar transferencias a otras</p>
 
-## Technologies 🚀
+## Tecnologias 🚀
 <ul>
   <li>HTML5</li>
   <li>CSS3</li>
@@ -11,14 +11,11 @@
   <li>MySQL</li>
 </ul>
 
-## Pre-Requisitos
+## Pre-Requisitos📋
 <p>Requisitos previos para que el sistema funcione correctamente</p>
 <ol>
-  <li>Importar la base de datos a xampp con el nombre "**eBanking**"</li>
+  <li>Importar la base de datos a xampp con el nombre "eBanking"</li>
 </ol>
-## Deploy 👓
-<a href='https://dashboard-usuarios.netlify.app/'>User's dashboard</a>
-
 ## Created by ✒️
 * **Laura González Martin**
 
