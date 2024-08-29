@@ -2,13 +2,15 @@
 session_start();
 
 require_once "../model/TransaccionDAO.php";
-require_once "Cuenta.php";
 
 $funcion = $_GET['fun'];
 
 switch ($funcion){
     case 'rt':
         realizarTransaccion();
+        break;
+    case 'mt':
+        mostrar();
         break;
 }
 
@@ -28,6 +30,13 @@ function realizarTransaccion(){
     }
 }
 
+function mostrar(){
+    if (isset($_SESSION['ci'])){
+        $ci = $_SESSION['ci'];
 
+        $result = (new Transaccion())->mostrar($ci);
+        echo json_encode($result);
+    }
+}
 
 ?>

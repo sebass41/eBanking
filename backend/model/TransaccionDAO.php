@@ -10,8 +10,23 @@ ini_set('log_errors', 1);
 ini_set('error_log', '../log/php_errors.log');
 
 class Transaccion{
-    function mostrar(){
-       
+    function mostrar($ci){
+       try{
+            $connection = conection();
+            $stmt = "SELECT * FROM transaccion WHERE Cedula = ?";
+            $stmt = $connection->prepare($stmt);
+            $stmt->bind_param("i", $ci);
+            $stmt->execute();
+
+            $respuesta = $stmt->get_result();
+            $transacciones = $respuesta->fetch_all(MYSQLI_ASSOC);
+
+            $msj = "Datos obtenidos correctamente";
+            return new Respuesta (true, $msj, $transacciones);
+       }catch(Exception $e){
+            $msj = "Error: " . $e->getMessage();
+            return new Respuesta(false, $msj, []);
+       }
     }
 
 
@@ -51,7 +66,7 @@ function hacerTransaccion($monto, $concepto, $fecha, $cedula, $cuentaO, $cuentaD
         return new Respuesta(false, $msj, []);
     }
 }
-    
+
 }
 
 ?>

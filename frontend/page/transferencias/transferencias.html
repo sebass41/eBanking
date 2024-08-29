@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transferencia</title>
-    <link rel="stylesheet" href="transferencia.css">
+    <link rel="stylesheet" href="transferencias.css">
     <script src="transferencias.js"></script>
 </head>
 <body>
-    <head>
-        
-    </head>
+    <header>
+        <nav>
+            <div>
+                <img src="../../assets/Sin título.png" alt="Logo" class="Logo">
+            </div>
+            <ul class="link">
+                <li><a href="../principal/principal.html" class="a">Inicio</a></li>
+                <li><a href="../cuenta/cuenta.html" class="a">Cuenta</a></li>
+                <li><button id="logout" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        
+        <h1>Mis movimientos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Monto</th>
+                    <th>Concepto</th>
+                    <th>Fecha</th>
+                    <th>Cédula</th>
+                    <th>Cuenta</th>
+                    <th>Cuenta del destinatario</th>
+                </tr>
+            </thead>
+            <tbody id="tBodyTrans"></tbody>
+        </table>
     </main>
 </body>
 </html>
