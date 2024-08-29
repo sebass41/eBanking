@@ -13,21 +13,20 @@ async function ingresar(){
             body: formData
         }
         
-        let respuesta = await fetch(url, config);
-        let datos = await respuesta.json();
-        console.log(datos);
-        if (datos.sucess){
-            console.log(datos);
+        let consulta = await fetch(url, config);
+        let respuesta = await consulta.json();
+        console.log(respuesta);
+        if (respuesta.sucess){
+            datos = respuesta.data[0];
             guardarSesion(datos);
             window.location.href = "http://localhost/eBanking/frontend/page/principal/principal.html";
         }else{
-            console.log("No se pudo iniciar sesion");
+            alert(respuesta.msj);
         }
     }
 }
 
 
-function guardarSesion(usuario){
-    usr = usuario.ci;
-    window.localStorage.setItem("usuario", JSON.stringify(usr));
+function guardarSesion(datos) {
+    localStorage.setItem('ci', datos.Cedula);
 }

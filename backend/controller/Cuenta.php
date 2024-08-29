@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "../model/cuentaDAO.php";
 
@@ -17,31 +18,33 @@ switch ($funcion){
 }
 
 function mostrar(){
-    session_start();
-    $_SESSION['ci'] = 25883661;
-    $ci = $_SESSION['ci'];
-    $result = (new Cuenta())->mostrar($ci);
+    if (isset($_SESSION['ci'])){
+   
+        $ci = $_SESSION['ci'];
+        $result = (new Cuenta())->mostrar($ci);
 
-    echo json_encode($result);
+        echo json_encode($result);
+
+    }
 }
-
 function crear(){
-    session_start();
-    $saldo = $_POST['saldo'];
-    $_SESSION['ci'] = 25883661;
-    $ci = $_SESSION['ci'];
-    
-    $result = (new Cuenta())->insertar($ci, $saldo);
-    echo json_encode($result);
+    if (isset($_SESSION['ci'])){
+        $saldo = $_POST['saldo'];
+        $ci = $_SESSION['ci'];
+        
+        $result = (new Cuenta())->insertar($ci, $saldo);
+        echo json_encode($result);
+    }
 }
 
 function depositar(){
-    session_start();
-    $cuenta = $_POST['cuenta'];
-    $cantidad = $_POST['cantidad'];
-    $result = (new Cuenta())->depositar($cuenta, $cantidad);
+    if (isset($_SESSION['ci'])){
+        $cuenta = $_POST['cuenta'];
+        $cantidad = $_POST['cantidad'];
+        $result = (new Cuenta())->depositar($cuenta, $cantidad);
 
-    echo json_encode($result);
+        echo json_encode($result);
+    }
 }
 
 ?>

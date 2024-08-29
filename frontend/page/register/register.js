@@ -24,6 +24,7 @@ async function insertar(){
             
             if (datos.sucess){
                 alert("Se registró correctamente")
+                window.location.href = "../login/login.html";
             }else {
                 alert("No se pudo registrar")
             }

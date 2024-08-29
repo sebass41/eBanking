@@ -15,19 +15,15 @@
         <form id="form">
             <h2>Crea tu cuenta</h2>
 
-            <input type="text" name="ci" id="ci" maxlength="8" required placeholder="Cédula"  onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))">
-            <input type="text" name="name" id="name" required placeholder="Nombre" onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))">
+            <input type="text" name="ci" id="ci" maxlength="8" required placeholder="Cédula">
+            <input type="text" name="name" id="name" required placeholder="Nombre">
             <input type="text" name="sName" id="sName" required placeholder="Apellido">
-            <input type="email" name="mail" id="mail" required placeholder="Email" onkeypress="return (event.charCode == 64) ||  ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)|| (event.charCode == 46))">
+            <input type="email" name="mail" id="mail" required placeholder="Email">
             <input type="password" name="pass" id="pass" required placeholder="Contraseña">
             <input type="password" name="passConfirm" id="passConfirm" required placeholder="Confirmar Contraseña">
             <input type="submit" class="submit" value="Registrarse">
 
         </form>
-
-        <div class="restricciones">
-            <li>a</li>
-        </div>
     </main>
 </body>
 

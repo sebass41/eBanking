@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "../model/UsuarioDAO.php";
 
@@ -10,6 +11,9 @@ switch($funcion){
         break;
     case 'l':
         login();
+        break;
+    case 'lo':
+        logout();
         break;
 }
 
@@ -27,13 +31,21 @@ function insertar(){
 }
 
 function login(){
-    session_start();
-
     $ci = $_POST['ci'];
     $pass = $_POST['pass'];
-    $_SESSION['ci'] = $ci;
     $result = (new Usuario())->login($ci, $pass);
 
+    if ($result->sucess){
+        $_SESSION['ci'] = $ci;
+    }
     echo json_encode($result);
 }
+
+function logout(){
+    session_unset();
+    session_destroy();
+    
+    echo json_encode("Sesión Cerrada");
+}
+
 ?>
