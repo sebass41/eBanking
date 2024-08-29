@@ -1,27 +1,21 @@
-# User analytics dashboard 🌟
-<p>Project started for Vue 3 advanced course for OpenWebinars company and then adapted to English language</p>
-<p>It consists of a user dashboard with authentication, management, and analytics. Supports admin users and commmon users</p>
+# eBanking - Tarea Integrada 🌟
+<p>Sistema de transacciones bancarias basico</p>
+<p>Le permite a los usuarios registrarse y dentro de la pagina crearse cuentas bancarias y realizar transferencias a otras</p>
 
 ## Technologies 🚀
-<p>Vue 3.4.21</p>
-<p>Firebase 10.12.2</p>
-<p>Vue router 4.3.3</p>
-<p>Pinia 2.1.7</p>
-<p>Vue chartjs 5.3.1 </p>
-<p>VueUse 10.11.0<p>
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>JavaScript</li>
+  <li>PHP</li>
+  <li>MySQL</li>
+</ul>
 
-## Roles
-
-### Common user 🧑
-<p><strong>User:</strong>user@user.com</p>
-<p><strong>Password:</strong>user123</p>
-<p>Every new user is a common user by default, you could use this user or create a new one using email and password or registering with Google</p>
-
-### Administrator user 🧑🏻
-<p><strong>User:</strong>admin@admin.com</p>
-<p><strong>Password:</strong>admin1234</p>
-<p>Administrators are able to change their own data or other user's role, they can also have access to charts and every user's basic information</p>
-
+## Pre-Requisitos
+<p>Requisitos previos para que el sistema funcione correctamente</p>
+<ol>
+  <li>Importar la base de datos a xampp con el nombre "**eBanking**"</li>
+</ol>
 ## Deploy 👓
 <a href='https://dashboard-usuarios.netlify.app/'>User's dashboard</a>
 
