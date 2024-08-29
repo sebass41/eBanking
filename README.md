@@ -16,8 +16,12 @@
 <ol>
   <li>Importar la base de datos a xampp con el nombre "eBanking"</li>
 </ol>
-## Created by ✒️
-* **Laura González Martin**
+
+## Crea ✒️
+* **Suarez Sebastián**
+* **Alvarez Felipe**
+* **Bogliacino Santiago**
+* **Modernell Valentino**
 
 ## Project setup
 ```
