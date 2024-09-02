@@ -17,6 +17,22 @@
   <li>Importar la base de datos a xampp con el nombre "eBanking"</li>
 </ol>
 
+## Requisitos no funcionales
+<p>Navegador Web</p>
+
+## Funcionalidades📋
+<ul>
+  <li>Iniciar Sesión</li>
+  <li>Cerrar Sesión</li>
+  <li>Crear cuenta bancaria</li>
+  <li>Registrarse</li>
+  <li>Cargar Saldo</li>
+  <li>Generar transferencia</li>
+  <li>Ver transferencias</li>
+  <li>Ver cuentas</li>
+</ul>
+
+
 ## Creado por 🦓🐲🦝🐒
 * **Suarez Sebastián**
 * **Alvarez Felipe**
