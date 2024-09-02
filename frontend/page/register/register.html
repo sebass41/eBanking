@@ -16,10 +16,15 @@
             <h2>Crea tu cuenta</h2>
 
             <input type="text" name="ci" id="ci" maxlength="8" required placeholder="Cédula">
+            <span id="error-ci">Cédula de identidad no válida</span>
+
             <input type="text" name="name" id="name" required placeholder="Nombre">
             <input type="text" name="sName" id="sName" required placeholder="Apellido">
             <input type="email" name="mail" id="mail" required placeholder="Email">
+
             <input type="password" name="pass" id="pass" required placeholder="Contraseña">
+            <span id="error-password">Asegurese de que la contraseña tenga al menos 8 dígitos, una maúscula y un número</span>
+
             <input type="password" name="passConfirm" id="passConfirm" required placeholder="Confirmar Contraseña">
             <input type="submit" class="submit" value="Registrarse">
 

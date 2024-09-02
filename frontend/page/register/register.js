@@ -37,52 +37,58 @@ function validarDatos(){
     let ciElement = document.querySelector("#ci");
     let passElement = document.querySelector("#pass");
     let passConfirmElement = document.querySelector("#passConfirm");
+    let errorCiElement = document.querySelector("#error-ci");
+    let errorPassElement = document.querySelector("#error-password");
 
 
     let valido = true;
-   /* if (validate_ci(ciElement.value)){
-        alert("Ingrese una cedula valida")
-        valido = false;
-    }*/
-
-    if (passElement.value.length > 7){
-
+    if (!validarCI(ciElement.value)){
+        errorCiElement.style.display = 'inline';
         valido = false;
     }
 
-    if (passElement.value !== passConfirmElement.value){
-        
+    if (!validarPass(passElement)){
+        errorPassElement.style.display = 'inline';
         valido = false;
     }
+
+      if (passElement.value !== passConfirmElement.value){
+        ciElement.style.display = 'inline';
+        valido = false;
+      }
 
     
     return valido;
 }
 
-/*
-function validation_digit(ci){
-    var a = 0;
-    var i = 0;
-    if(ci.length <= 6){
-      for(i = ci.length; i < 7; i++){
-        ci = '0' + ci;
-      }
-    }
-    for(i = 0; i < 7; i++){
-      a += (parseInt("2987634"[i]) * parseInt(ci[i])) % 10;
-    }
-    if(a%10 === 0){
-      return 0;
-    }else{
-      return 10 - a % 10;
-    }
+
+function validarCI(ci) {
+  ci = ci.replace(/[.-]/g, '');
+
+  if (ci.length !== 8) {
+      return false;
   }
-  
-  function validate_ci(ci){
-    ci = clean_ci(ci);
-    var dig = ci[ci.length - 1];
-    ci = ci.replace(/[0-9]$/, '');
-    return (dig == validation_digit(ci));
+
+  const coeficientes = [2, 9, 8, 7, 6, 3, 4];
+  let suma = 0;
+
+  for (let i = 0; i < 7; i++) {
+      suma += parseInt(ci[i]) * coeficientes[i];
   }
-  
-*/
+
+  const digitoVerificador = (10 - (suma % 10)) % 10;
+
+  return digitoVerificador === parseInt(ci[7]);
+}
+
+function validarPass(password) {
+  if (password.length <= 8) {
+      return false;
+  }
+
+  var hasNumber = /\d/.test(password);
+
+  var hasUpperCase = /[A-Z]/.test(password);
+
+  return hasNumber && hasUpperCase;
+}

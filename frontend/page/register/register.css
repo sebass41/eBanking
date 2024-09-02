@@ -78,3 +78,15 @@ input{
     border: solid 3px;
 }
 
+
+span {
+    color: #d9534f;
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    display: none;
+    font-weight: bold;
+    background-color: #f8d7da;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+}
