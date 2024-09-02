@@ -67,6 +67,25 @@ function hacerTransaccion($monto, $concepto, $fecha, $cedula, $cuentaO, $cuentaD
     }
 }
 
+function recibo($IdTrans){
+    try{
+        $connection = conection();
+        $stmt = "SELECT * FROM transaccion WHERE Id_transaccion = ?";
+        $stmt = $connection->prepare($stmt);
+        $stmt->bind_param("i", $IdTrans);
+        $stmt->execute();
+
+        $respuesta = $stmt->get_result();
+        $recibo = $respuesta->fetch_all(MYSQLI_ASSOC);
+
+        $msj = "Datos obtenidos correctamente";
+        return new Respuesta (true, $msj, $recibo);
+
+    }catch (Exception $e){
+        $msj = "Error: " . $e;
+        return new Respuesta (false, $msj, []);
+    }
+}
 }
 
 ?>

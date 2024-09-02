@@ -71,8 +71,18 @@ function transferir(){
         if (datos.sucess){
             alert(datos.msj);
             actualizarCuentas();
+
         }else {
             alert(datos.msj)
         }
     }
+}
+
+async function obtenerRecibo(){
+    let url = "http://localhost/eBanking/backend/controller/Transaccion.php?fun=r";
+
+    let consulta = await fetch(url);
+    let datos = await consulta.json();
+    let recibo = datos;
+    return recibo;
 }

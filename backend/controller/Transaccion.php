@@ -12,6 +12,9 @@ switch ($funcion){
     case 'mt':
         mostrar();
         break;
+    case 'r':
+        recibo();
+        break;
 }
 
 function realizarTransaccion(){
@@ -35,6 +38,15 @@ function mostrar(){
         $ci = $_SESSION['ci'];
 
         $result = (new Transaccion())->mostrar($ci);
+        echo json_encode($result);
+    }
+}
+
+function recibo(){
+    if (isset($_SESSION['ci'])){
+        $idTrans = $_POST['id'];
+        
+        $result = (new Transaccion())->recibo($idTrans);
         echo json_encode($result);
     }
 }
