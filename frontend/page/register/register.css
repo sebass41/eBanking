@@ -79,7 +79,8 @@ input{
 }
 
 
-span {
+span{
+    display: inline;
     color: #d9534f;
     font-size: 0.9em;
     margin-bottom: 1em;

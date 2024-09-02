@@ -34,31 +34,38 @@ async function insertar(){
 }
 
 function validarDatos(){
-    let ciElement = document.querySelector("#ci");
-    let passElement = document.querySelector("#pass");
-    let passConfirmElement = document.querySelector("#passConfirm");
-    let errorCiElement = document.querySelector("#error-ci");
-    let errorPassElement = document.querySelector("#error-password");
+  let ciElement = document.querySelector("#ci");
+  let passElement = document.querySelector("#pass");
+  let passConfirmElement = document.querySelector("#passConfirm");
+  let errorCiElement = document.querySelector("#error-ci");
+  let errorPassElement = document.querySelector("#error-password");
+  let errorPassElement2 = document.querySelector("#error-password2");
 
 
-    let valido = true;
-    if (!validarCI(ciElement.value)){
-        errorCiElement.style.display = 'inline';
-        valido = false;
-    }
+  let valido = true;
 
-    if (!validarPass(passElement)){
-        errorPassElement.style.display = 'inline';
-        valido = false;
-    }
+  if (!validarCI(ciElement.value)){
+    errorCiElement.style.display = 'inline';
+    valido = false;
+  }else{
+    errorCiElement.style.display = 'none';
+  }
 
-      if (passElement.value !== passConfirmElement.value){
-        ciElement.style.display = 'inline';
-        valido = false;
-      }
+  if (!validarPass(passElement.value)){
+    errorPassElement.style.display = 'inline';
+    valido = false;
+  }else{
+    errorPassElement.style.display = 'none';
+  }
 
-    
-    return valido;
+  if (passElement.value !== passConfirmElement.value){
+    errorPassElement2.style.display = 'inline';
+    valido = false;
+  }else{
+    errorPassElement2.style.display = 'none';
+  }
+  
+  return valido;
 }
 
 
@@ -78,6 +85,7 @@ function validarCI(ci) {
 
   const digitoVerificador = (10 - (suma % 10)) % 10;
 
+  console.log(ci);
   return digitoVerificador === parseInt(ci[7]);
 }
 
@@ -90,5 +98,6 @@ function validarPass(password) {
 
   var hasUpperCase = /[A-Z]/.test(password);
 
+  console.log(password);
   return hasNumber && hasUpperCase;
 }
