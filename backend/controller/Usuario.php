@@ -37,6 +37,7 @@ function login(){
 
     if ($result->sucess){
         $_SESSION['ci'] = $ci;
+        
     }
     echo json_encode($result);
 }

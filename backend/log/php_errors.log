@@ -47,3 +47,29 @@ Stack trace:
 [29-Aug-2024 01:07:46 Europe/Berlin] PHP Warning:  Undefined array key "monto" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 15
 [29-Aug-2024 03:17:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 2
 [29-Aug-2024 03:52:26 Europe/Berlin] PHP Fatal error:  Cannot redeclare mostrar() (previously declared in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php:35) in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 26
+[02-Sep-2024 04:25:46 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Cuenta::depositar(), 2 passed in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 50 and exactly 3 expected in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php:33
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(50): Cuenta->depositar('1', '7')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(16): depositar()
+#2 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php on line 33
+[02-Sep-2024 04:27:25 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Cuenta::depositar(), 2 passed in C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php on line 50 and exactly 3 expected in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php:33
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(50): Cuenta->depositar('7', '7')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(16): depositar()
+#2 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php on line 33
+[02-Sep-2024 04:30:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php:38
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php(38): mysqli_stmt->bind_param('iii', '4', '2')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(51): Cuenta->depositar('2', '4', '51682174')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(16): depositar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php on line 38
+[02-Sep-2024 04:30:59 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php:38
+Stack trace:
+#0 C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php(38): mysqli_stmt->bind_param('iii', '4', '7')
+#1 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(51): Cuenta->depositar('7', '4', '51682174')
+#2 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(16): depositar()
+#3 {main}
+  thrown in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php on line 38

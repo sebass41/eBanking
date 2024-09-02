@@ -5,6 +5,7 @@ window.onload = ()=>{
 
 function crearCuenta(){
     let formElement = document.querySelector("#formCuenta")
+    let saldoElement = document.querySelector("#saldo");
     
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
@@ -21,7 +22,8 @@ function crearCuenta(){
         console.log(datos);
         
         if (datos.sucess){
-            alert(datos.msj)
+            alert(datos.msj);
+            saldoElement.value = '';
         }else {
             alert(datos.msj)
         }
@@ -30,6 +32,9 @@ function crearCuenta(){
 
 function depositar(){
     let formElement = document.querySelector("#formDeposito");
+    let cuentaElement = document.querySelector("#cuenta");
+    let cantidadElement = document.querySelector("#cantidad");
+
     formElement.onsubmit = async (e)=>{
         e.preventDefault();
         let formData =  new FormData(formElement);
@@ -46,6 +51,10 @@ function depositar(){
 
         if (datos.sucess){
             alert("Se despositó correctamente");
+            console.log(cuentaElement.value);
+            console.log(cantidadElement.value)
+            cuentaElement.value = '';
+            cantidadElement.value = '';
         }else{
             alert("No se pudo realizar el depósito");
         }

@@ -6,6 +6,7 @@
     <title>Administrar Cuentas</title>
     <link rel="stylesheet" href="cuenta.css">
     <script src="cuenta.js"></script>
+    <script src="../../func/logout.js"></script>
 </head>    
     <body>
         <header>
@@ -26,7 +27,7 @@
                 <h1>Crear Cuenta Bancaria</h1>
                 <form id="formCuenta">
                     <label for="">Saldo de la cuenta</label>
-                    <input type="text" name="saldo">
+                    <input type="text" name="saldo" id="saldo">
 
                     <input type="submit">
                 </form>
@@ -35,10 +36,10 @@
                 <h1>Despositar Saldo</h1>
                 <form id="formDeposito">
                     <label for="">Número de cuenta</label>
-                    <input type="text" name="cuenta">
+                    <input type="text" name="cuenta" id="cuenta">
 
                     <label for="">Cantidad</label>
-                    <input type="text" name="cantidad">
+                    <input type="text" name="cantidad" id="cantidad">
 
                     <input type="submit">
                 </form>

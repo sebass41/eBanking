@@ -17,20 +17,38 @@ async function insertar(){
         }
 
         if (validarDatos()){
-
-            let respuesta = await fetch(url, config);
-            let datos = await respuesta.json();
-            console.log(datos);
+          let respuesta = await fetch(url, config);
+          let datos = await respuesta.json();
+          console.log(datos);
             
-            if (datos.sucess){
-                alert("Se registró correctamente")
-                window.location.href = "../login/login.html";
-            }else {
-                alert("No se pudo registrar")
-            }
+          if (datos.sucess){
+            crearCuenta();
+            alert("Se registró correctamente");
+            window.location.href = "../login/login.html";
+          }else {
+            alert("No se pudo registrar")
+          }
         }
 
     }
+}
+
+function crearCuenta(){
+  let formElement = document.querySelector("#form");
+  formElement.onsubmit = async (e) =>{
+    e.preventDefault()
+    let formData =  new FormData(formElement);
+    let url = "http://localhost/eBanking/backend/controller/Cuenta.php?fun=c"
+
+    let config = {
+        method: 'POST',
+        body: formData
+    }
+
+    let respuesta = await fetch(url, config);
+    let datos = await respuesta.json();
+    console.log(datos);
+  }
 }
 
 function validarDatos(){

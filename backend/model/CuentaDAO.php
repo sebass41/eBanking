@@ -30,16 +30,22 @@ class Cuenta{
 
     }
 
-    function depositar($numCuenta, $saldo){
+    function depositar($numCuenta, $saldo, $ci){
         try{
             $connection = conection();
-            $sql = "UPDATE `cuenta` SET `Saldo`= saldo + ? WHERE Num_cuenta = ?";
+            $sql = "UPDATE `cuenta` SET `Saldo`= saldo + ? WHERE Num_cuenta = ? AND Cedula = ?";
             $stmt = $connection->prepare($sql);
-            $stmt->bind_param("ii", $saldo, $numCuenta);
+            $stmt->bind_param("iii", $saldo, $numCuenta, $ci);
             $stmt->execute();
 
-            $msj = "Actualización exitosa";
-            return new Respuesta(true, $msj, $stmt);
+            if ($stmt->affected_rows > 0){
+                $msj = "Depósito exitoso";
+                return new Respuesta(true, $msj, $stmt);
+            }else{
+                $msj = "No se pudo depositar a esa cuenta";
+                return new Respuesta(false, $msj, []);
+            }     
+            
         }catch(Exception $e){
             $msj = "Error: " . $e->getMessage();
             return new Respuesta(false, $msj, []);

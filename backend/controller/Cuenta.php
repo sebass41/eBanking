@@ -34,6 +34,12 @@ function crear(){
         
         $result = (new Cuenta())->insertar($ci, $saldo);
         echo json_encode($result);
+    }else{
+        $ci = $_POST['ci'];
+        $saldo = 0;
+
+        $result = (new Cuenta())->insertar($ci, $saldo);
+        echo json_encode($result);
     }
 }
 
@@ -41,7 +47,8 @@ function depositar(){
     if (isset($_SESSION['ci'])){
         $cuenta = $_POST['cuenta'];
         $cantidad = $_POST['cantidad'];
-        $result = (new Cuenta())->depositar($cuenta, $cantidad);
+        $ci = $_SESSION['ci'];
+        $result = (new Cuenta())->depositar($cuenta, $cantidad, $ci);
 
         echo json_encode($result);
     }

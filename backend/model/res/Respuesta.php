@@ -10,6 +10,5 @@ class Respuesta{
         $this->msj = $msj;
         $this->data = $data;
     }
-    
 }
 ?>
