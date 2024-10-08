@@ -15,6 +15,9 @@ switch ($funcion){
     case 'r':
         recibo();
         break;
+    case 'g':
+        generarToken();
+        break;
 }
 
 function realizarTransaccion(){
@@ -24,6 +27,15 @@ function realizarTransaccion(){
         $cuentaO = $_POST['cuentaO'];
         $cuendaD = $_POST['cuentaD'];
         $ci = $_SESSION['ci'];
+        $key = $_SESSION['key'];
+        
+        // Validar token
+        $token = $_POST['token'];
+        $resultToken = (new Transaccion())->validarToken($token, $key);
+        if (!$resultToken){
+            echo json_encode("Token inválido $resultToken");
+            return;
+        }
         
         date_default_timezone_set('America/Montevideo');
         $date = date('Y-m-d H:i:s');
@@ -51,4 +63,11 @@ function recibo(){
     }
 }
 
+function generarToken(){
+    $ciUsr = $_SESSION['ci'];
+    $key = $_SESSION['key'];
+
+    $result = (new Transaccion())->generarToken($key, $ciUsr);
+    echo json_encode($result);
+}
 ?>

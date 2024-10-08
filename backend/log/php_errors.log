@@ -73,3 +73,8 @@ Stack trace:
 #2 C:\xampp\htdocs\eBanking\backend\controller\Cuenta.php(16): depositar()
 #3 {main}
   thrown in C:\xampp\htdocs\eBanking\backend\model\CuentaDAO.php on line 38
+[08-Oct-2024 02:53:07 Europe/Berlin] PHP Warning:  Undefined array key "fun" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 6
+[08-Oct-2024 02:53:57 Europe/Berlin] PHP Warning:  Undefined array key "ci" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 67
+[08-Oct-2024 02:53:57 Europe/Berlin] PHP Warning:  Undefined array key "key" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 68
+[08-Oct-2024 03:04:59 Europe/Berlin] PHP Warning:  Undefined array key "ci" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 67
+[08-Oct-2024 03:04:59 Europe/Berlin] PHP Warning:  Undefined array key "key" in C:\xampp\htdocs\eBanking\backend\controller\Transaccion.php on line 68

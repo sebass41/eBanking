@@ -86,6 +86,27 @@ function recibo($IdTrans){
         return new Respuesta (false, $msj, []);
     }
 }
+
+function generarToken($key, $usr){
+    $token = base64_encode(json_encode(['username' => $usr, 'exp'=> time() + 45]));
+    $signature = hash_hmac('sha256', $token, $key);
+    $data =  $token. '.'. $signature;
+    $msj = "Token generado correctamente";
+    return new Respuesta(true, $msj, $data);
+}
+
+function validarToken($token, $key){
+    list($encodedPayload, $signature) = explode('.', $token);
+
+    if (hash_hmac('sha256', $encodedPayload, $key) != $signature){
+        return null;
+    }
+    $payload = json_decode(base64_decode($encodedPayload), true);
+    if ($payload['exp'] < time()){
+        return null;
+    }
+    return $payload;
+}
 }
 
 ?>

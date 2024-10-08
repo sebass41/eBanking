@@ -36,8 +36,9 @@ function login(){
     $result = (new Usuario())->login($ci, $pass);
 
     if ($result->sucess){
+        $key =  bin2hex(random_bytes(16));
         $_SESSION['ci'] = $ci;
-        
+        $_SESSION['key'] = $key;
     }
     echo json_encode($result);
 }
@@ -48,5 +49,6 @@ function logout(){
     
     echo json_encode("Sesión Cerrada");
 }
+
 
 ?>

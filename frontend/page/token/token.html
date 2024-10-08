@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token</title>
+    <link rel="stylesheet" href="token.css">
+    <script src="token.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="../../assets/Sin título.png" alt="Logo" class="Logo">
+            </div>
+            <ul class="link">
+                <li><a href="../cuenta/cuenta.html" class="a">Cuenta</a></li>
+                <li><a href="../transferencias/transferencias.html" class="a">Mis movimientos</a></li>
+                <li><a href="../token/token.html"  class="a">Token</a></li>
+                <li><button id="logout" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Token</h1>
+        <p>El token se ha generado correctamente:</p>
+        <p id="token"></p>
+        <button id="copiarToken">Copiar Token</button>
+        <a href="../principal/principal.html">Volver al inicio</a>
+    </main>
+</body>
+</html>
